@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>B2NOTE Integration Example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!--Service page content-->
+    <div>
+      <h1>B2NOTE Integration Example Page</h1>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum urna sit amet dui rutrum, eu dignissim neque consectetur. Aenean in facilisis justo. Donec libero quam, feugiat non fermentum et, suscipit id eros. Curabitur lectus est, molestie et dolor ut, vestibulum imperdiet est. Etiam non tristique eros. Morbi et massa justo. Nullam et leo auctor, fringilla lorem ut, maximus eros. Vestibulum suscipit ex nec sem tincidunt, non condimentum dolor ullamcorper. Praesent et rhoncus felis. Praesent ac nibh vulputate, aliquet nunc quis, feugiat nunc.
+      </p>
+      <!--This is the form that is used to submit the needed information to B2NOTE Widget-->
+      <form 
+        action="https://b2note.eudat.eu/interface_main.html"
+        method="post"
+        target="b2note_iframe">
+        <!--URL of the annotated record-->
+        <input
+          type="hidden"
+          name="recordurl_tofeed"
+          value="https://b2share.eudat.eu/records/688901f6e4fe4b92bd0238715c3186bb">
+        <!--PID of the annotated record-->
+        <input
+          type="hidden"
+          name="pid_tofeed"
+          value="http://hdl.handle.net/11304/9b0ade56-0d31-445d-b518-00331461918e">
+        <!--URL of the record contents for downloading-->
+        <input 
+          type="hidden"
+          name="subject_tofeed"
+          value="https://b2share.eudat.eu/api/files/07104f78-4c71-4f21-b858-119c6a6fe2f9/figure_spectra.txt">
+        <!--Associated record keywords-->
+        <input 
+          type="hidden"
+          name="keywords_tofeed"
+          value="1H‐NMR, 2D NMR, band‐selective homonuclear (BASH) decoupling">
+          <!--Submission button -->
+        <button 
+          type="submit"
+          value="Annotate in B2Note"
+          title="Click to annotate file using B2Note.">
+          Annotate in B2NOTE
+        </button>
+      </form>
+
+      <!--Widget container with sample styling-->
+      <!--When the page loads, it should be hidden and shown on the form submission-->
+      <div class="widget-container">
+        <!--Close button, should be bound to hide the widget-->
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <!--The glorious iframe with the running app!-->
+        <iframe id="b2note_iframe" name="b2note_iframe" class="b2note-iframe">
+        </iframe>
+      </div>
+    </div>
+  </body>
+</html>
