@@ -12,13 +12,22 @@
     <div>
       <h1>B2NOTE Integration Example Page</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum urna sit amet dui rutrum, eu dignissim neque consectetur. Aenean in facilisis justo. Donec libero quam, feugiat non fermentum et, suscipit id eros. Curabitur lectus est, molestie et dolor ut, vestibulum imperdiet est. Etiam non tristique eros. Morbi et massa justo. Nullam et leo auctor, fringilla lorem ut, maximus eros. Vestibulum suscipit ex nec sem tincidunt, non condimentum dolor ullamcorper. Praesent et rhoncus felis. Praesent ac nibh vulputate, aliquet nunc quis, feugiat nunc.
+	This is an example for B2NOTE integrators how to integrate a B2NOTE widget to your service. The integration is done simply by including an IFRAME component. Please refer to the source code (HTML, CSS, JS files) for details.
+      </p>
+      <p>
+	This example integrates with the development version of B2NOTE.
+      </p>
+      <p>
+	For more information and documentation about B2NOTE, please refer to the <a href="https://b2note.bsc.es">B2NOTE home page</a>
       </p>
       <!--This is the form that is used to submit the needed information to B2NOTE Widget-->
-      <form 
-        action="https://b2note.eudat.eu/interface_main.html"
+      <!-- For production version use: -->
+      <!-- action="https://b2note.eudat.eu/interface_main.html" -->
+      <form
+        action="https://b2note-dev.bsc.es/widget"
         method="post"
-        target="b2note_iframe">
+	onsubmit="showWidget()"
+        target="b2note-iframe">
         <!--URL of the annotated record-->
         <input
           type="hidden"
@@ -50,15 +59,16 @@
 
       <!--Widget container with sample styling-->
       <!--When the page loads, it should be hidden and shown on the form submission-->
-      <div class="widget-container">
+      <div id="widget-container">
         <!--Close button, should be bound to hide the widget-->
-        <button type="button" class="close" aria-label="Close">
+        <button type="button" class="close" aria-label="Close" onclick="hideWidget()">
           <span aria-hidden="true">×</span>
         </button>
         <!--The glorious iframe with the running app!-->
-        <iframe id="b2note_iframe" name="b2note_iframe" class="b2note-iframe">
+        <iframe id="b2note-iframe" name="b2note-iframe">
         </iframe>
       </div>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>
