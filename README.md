@@ -1,2 +1,7 @@
 # B2NOTE-Integration-Example
-A simple example of integration of the B2NOTE Widget on a Sample Page.
+A simple example of integration of the B2NOTE Widget on a [Sample Page](https://github.com/e-sdf/B2NOTE-Integration-Example/tree/master/Sample%20Page).
+
+## Howto
+- Clone the repository, go to `Sample Page` directory and open `index.html` in a browser.
+- Based on your web development technology, you need to implement widget container hiding and showing, see e.g. http://stackoverflow.com/questions/12102464/how-do-i-make-iframes-load-only-on-a-button-click
+- For the B2ACCESS login to work, the page needs to run on a public IP.
