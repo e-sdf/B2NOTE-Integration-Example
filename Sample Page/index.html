@@ -28,28 +28,27 @@
         method="post"
 	onsubmit="showWidget()"
         target="b2note-iframe">
-        <!--URL of the annotated record-->
-        <input
-          type="hidden"
-          name="recordurl_tofeed"
-          value="https://b2share.eudat.eu/records/688901f6e4fe4b92bd0238715c3186bb">
-        <!--PID of the annotated record-->
+	<!--URL of the record landing page-->
         <input
           type="hidden"
           name="pid_tofeed"
           value="http://hdl.handle.net/11304/9b0ade56-0d31-445d-b518-00331461918e">
+	<!--Landing page user-friendly name-->
+        <input
+          type="hidden"
+          name="pidName_tofeed"
+          value="Some name">
         <!--URL of the record contents for downloading-->
         <input 
           type="hidden"
           name="subject_tofeed"
           value="https://b2share.eudat.eu/api/files/07104f78-4c71-4f21-b858-119c6a6fe2f9/figure_spectra.txt">
-        <!--Associated record keywords-->
+        <!--Record contents user-friendly name (e.g. filename)-->
         <input 
           type="hidden"
-          name="keywords_tofeed"
-          value="1H‐NMR, 2D NMR, band‐selective homonuclear (BASH) decoupling">
-          <!--Submission button -->
-        <button 
+          name="subjectName_tofeed"
+          value="filename.ext">
+	<button 
           type="submit"
           value="Annotate in B2Note"
           title="Click to annotate file using B2Note.">
